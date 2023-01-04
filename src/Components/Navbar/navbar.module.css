@@ -1,0 +1,9 @@
+.navbar{
+    position: fixed;
+}
+.navbar_links{
+    border-bottom: 2px solid transparent;
+}
+.navbar_links:hover{
+    border-bottom: 2px solid #FF597B;
+}
