@@ -1,9 +1,19 @@
-.navbar{
+@font-face {
+    font-family: "Allura";
+    src: url('../../fonts/Allura-Regular.ttf') format('truetype');
+}
+.logo{
+    font-family: "Allura";
+    box-sizing: border-box;
+}
+.navbar {
     position: fixed;
 }
-.navbar_links{
+
+.navbar_links {
     border-bottom: 2px solid transparent;
 }
-.navbar_links:hover{
+
+.navbar_links:hover {
     border-bottom: 2px solid #3C6255;
 }

@@ -7,16 +7,15 @@ import Home from './Pages/Home';
 import Projects from './Pages/Projects';
 import Skills from './Pages/Skills';
 import GithubStats from './Pages/GithubStats';
-import { Container, IconButton, VStack } from '@chakra-ui/react';
-import { RxArrowUp } from 'react-icons/rx';
-import { HashLink } from 'react-router-hash-link';
+import { Box, Container, VStack } from '@chakra-ui/react';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <Container minW="60%">
-        <VStack align="stretch" spacing="160px">
+      <Container minW={{base:'90%',md:'80%',xl:'60%'}}>
+        {/* 160 */}
+        <VStack  align="stretch" spacing="100px">
           <Home />
           <About />
           <Skills />
@@ -25,7 +24,6 @@ function App() {
           <Contact />
         </VStack>
       </Container>
-      <HashLink smooth to="#home"><IconButton zIndex={12} position="fixed" bottom="2rem" right="2rem" bg="brand" icon={<RxArrowUp color='white' />} /></HashLink>
       <Footer />
     </div>
   );

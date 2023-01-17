@@ -3,7 +3,7 @@ import React from 'react'
 
 const SkillCard = ({label,url}) => {
   return (
-    <Card cursor="pointer" border="1px solid #f4f4f4">
+    <Card cursor="pointer" boxShadow="xs" border="1px solid #e0e0e0" _hover={{boxShadow:"xl"}}>
         <CardHeader alignContent={"center"}>
             <Image m="auto" w="50%" src={url} alt="react"/>
         </CardHeader>

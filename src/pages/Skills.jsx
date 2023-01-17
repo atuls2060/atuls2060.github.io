@@ -1,8 +1,9 @@
-import { Box, Container, Grid, Heading, HStack } from '@chakra-ui/react'
+import { Box, Container, Grid, Heading, HStack, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
 import SkillCard from '../Components/SkillCard'
 
 const Skills = () => {
+    const colCount = useBreakpointValue({ base: '2', md: '3', xl: '4' })
 
     const skills = [
         {
@@ -61,11 +62,11 @@ const Skills = () => {
     ]
 
     return (
-        <Box id='skills'>
+        <Box id='skills' paddingTop={"100px"}>
             <Heading mb="70px">Skills</Heading>
-            <Grid justifyContent={"center"} alignItems={"center"} gridTemplateColumns="repeat(4,1fr)"  gap={10}>
+            <Grid justifyContent={"center"} alignItems={"center"} gridTemplateColumns={`repeat(${colCount},1fr)`} gap={5}>
                 {
-                    skills.map((item,index) => {
+                    skills.map((item, index) => {
                         return <SkillCard key={index} {...item} />
                     })
                 }

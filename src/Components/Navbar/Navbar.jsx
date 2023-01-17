@@ -1,12 +1,17 @@
-import { Card, Container, HStack, Spacer, Show, Text, Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody, useDisclosure, VStack, useColorMode, IconButton } from '@chakra-ui/react'
+import { Card, Container, HStack, Spacer, Show, Text, Drawer, DrawerOverlay, DrawerContent,DrawerCloseButton, DrawerHeader, DrawerBody, useDisclosure, VStack, useColorMode, IconButton } from '@chakra-ui/react'
 import Styles from "./navbar.module.css"
 import { BiMoon, BiSun } from "react-icons/bi"
 import { RxHamburgerMenu } from "react-icons/rx"
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
+import { RxArrowUp } from 'react-icons/rx';
+import { HashLink } from 'react-router-hash-link';
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
 const Navbar = () => {
+  const [shadow, setShadow] = useState('xs')
+  const [showGotoTop, setShowGotoTop] = useState('xs')
   const { colorMode, toggleColorMode } = useColorMode()
 
   let Links = [
@@ -36,17 +41,26 @@ const Navbar = () => {
     }
   ]
 
+
+  useScrollPosition(({ prevPos, currPos }) => {
+    let showShadow = currPos.y < -30
+    setShadow(showShadow ? 'base' : 'xs')
+    setShowGotoTop(currPos.y > -250)
+  }, [shadow])
+
   return (
-    <Card zIndex="1" bg="background" p={4} color="navbar_links" position="fixed" w="100%">
-      <Container maxW="80%">
+    <Card zIndex="1" bg="background" p={2} color="navbar_links" position="fixed" w="100%" boxShadow={shadow}>
+      <Container maxW={{ base: '90%', md: '90%', xl: '80%' }}>
         <HStack>
-          <NavLink style={{ color: "#3C6255" }}><Text fontWeight="bold">Atul Singh</Text></NavLink>
+          <NavLink style={{ color: "#3C6255" }}><Text fontSize={["30px", "40px"]} className={Styles.logo}>Atul Singh</Text></NavLink>
           <Spacer />
           <HStack gap={4}>
             <Show above='md'>
               {
                 Links.map((item, index) => {
-                  return <NavHashLink key={index} style={({ isActive }) => isActive ? { color: "#3C6255" } : { color: "navbar_links" }} className={Styles.navbar_links} smooth to={item.path}>{item.label}</NavHashLink>
+                  return item.label === "Resume" ?
+                    <a href='https://drive.google.com/file/d/10FdVUHI3nLJzKavREff1dayztKlLoWWK/view' target="_blank">Resume</a>
+                    : <NavHashLink key={index} style={({ isactive }) => isactive ? { color: "#3C6255" } : { color: "navbar_links" }} className={Styles.navbar_links} smooth to={item.path}>{item.label}</NavHashLink>
                 })
               }
             </Show>
@@ -58,6 +72,9 @@ const Navbar = () => {
           </HStack>
         </HStack>
       </Container>
+      <HashLink smooth to="#home">
+        <IconButton hidden={showGotoTop} zIndex={12} position="fixed" bottom="2rem" right="2rem" bg="brand" icon={<RxArrowUp color='white' />} />
+      </HashLink>
     </Card>
   )
 }
@@ -103,12 +120,13 @@ export const MobileNav = () => {
       <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
+          <DrawerCloseButton />
           <DrawerHeader borderBottomWidth='1px'>Atul Singh</DrawerHeader>
           <DrawerBody>
             <VStack>
               {
                 Links.map((item, index) => {
-                  return <NavLink style={({ isActive }) => isActive ? { color: "#3C6255" } : { color: "black" }} className={Styles.navbar_links} key={index} to={item.path}>{item.label}</NavLink>
+                  return <NavLink style={({ isactive }) => isactive ? { color: "#3C6255" } : { color: "black" }} className={Styles.navbar_links} key={index} to={item.path}>{item.label}</NavLink>
                 })
               }
             </VStack>
