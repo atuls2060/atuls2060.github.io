@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.bc73cb69.css",
-    "main.js": "/static/js/main.9969ed99.js",
+    "main.js": "/static/js/main.b0fa3cbe.js",
     "static/js/787.128fc6e9.chunk.js": "/static/js/787.128fc6e9.chunk.js",
     "static/media/Allura-Regular.ttf": "/static/media/Allura-Regular.20a2998cacd8d0b510b3.ttf",
     "index.html": "/index.html",
     "main.bc73cb69.css.map": "/static/css/main.bc73cb69.css.map",
-    "main.9969ed99.js.map": "/static/js/main.9969ed99.js.map",
+    "main.b0fa3cbe.js.map": "/static/js/main.b0fa3cbe.js.map",
     "787.128fc6e9.chunk.js.map": "/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bc73cb69.css",
-    "static/js/main.9969ed99.js"
+    "static/js/main.b0fa3cbe.js"
   ]
 }
