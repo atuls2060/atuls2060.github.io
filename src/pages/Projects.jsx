@@ -10,11 +10,19 @@ const Projects = () => {
 
     const projectData = [
         {
+            image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fapnamart.png?alt=media&token=826500ec-0c07-4067-b7a2-9ee9519c177a",
+            live: "https://apna-mart.vercel.app/",
+            github: "https://github.com/atuls2060/ApnaMart",
+            title: "Apna Mart",
+            tech: ["JavaScript", "Next js","Redux","Chakra ui","Json-server", "Json-Server-Auth", "JWT"],
+            desc: "Apna mart is a clone of Amazon website, here your can create account search products and place orders"
+        },
+        {
             image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fmyglamn.jpg?alt=media&token=89ad7471-c310-4532-8a9f-9b89da3664fb",
             live: "https://lookyourbest.netlify.app/",
             github: "https://github.com/atuls2060/icky-committee-8700",
             title: "Lookyourbest makeup brand",
-            tech: "",
+            tech: ["React js", "Chakra Ui", "JavaScript", "Firebase", "Html", "Css"],
             desc: "MyGlamm is an e-commerce website that sells cosmetics and personal care products."
         },
         {
@@ -22,23 +30,15 @@ const Projects = () => {
             live: "https://dazzling-dango-48eee9.netlify.app/",
             github: "https://github.com/atuls2060/tart-pigs-946",
             title: "Hotjar Analytics Tools",
-            tech: "",
+            tech: ["Html", "Css", "JavaScript"],
             desc: "Hotjar is a product experience insights tool that gives you behavior analytics and feedback data"
         },
         {
-            image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fgeekbuying.jpg?alt=media&token=f13ec751-c968-45a3-b601-83a246241901",
-            live: "https://roaring-kitsune-efe065.netlify.app/",
-            github: "https://github.com/atuls2060/hanging-teeth-7136",
-            title: "Gadget Factory",
-            tech: "",
-            desc: "Gadget Factory is an e-commerce website that sells Electronics products."
-        },
-        {
             image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fweather-map.jpg?alt=media&token=f74d9409-fc58-4858-a7f8-2add0940bc3e",
-            live: "https://lookyourbest.netlify.app/",
-            github: "https://atul-weather-map.netlify.app/",
+            live: "https://atul-weather-map.netlify.app/",
+            github: "https://github.com/atuls2060/weather-map",
             title: "Weather Map",
-            tech: "",
+            tech: ["Html", "Css", "JavaScript", "Axios"],
             desc: "Get weather details of world, Search by city name and get temperature, wind speed,clouds, humidity"
         }
 
@@ -46,7 +46,7 @@ const Projects = () => {
 
     return (
         <Box id='projects' paddingTop={"100px"}>
-            <Heading mb="70px" textAlign='center'>Projects</Heading>
+            <Heading color="headingColor" mb="70px" textAlign='center'>Projects</Heading>
             <Grid gap={5} gridTemplateColumns={`repeat(${breakpointValue},1fr)`}>
                 {
                     projectData.map((item) => {

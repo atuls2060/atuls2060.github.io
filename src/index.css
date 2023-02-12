@@ -16,16 +16,14 @@ code {
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar {
   width: .6rem;
-  border-radius: .5rem;
-  background-color: darkgray;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3c6255ac;
+  background-color: #61892f;
   border-radius: .5rem;
 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #3C6255;
+  background-color: #86c232;
 }

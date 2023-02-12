@@ -1,14 +1,16 @@
-import { Box, Flex, Heading, useBreakpointValue, VStack } from '@chakra-ui/react'
+import { Box, Flex, Heading, useBreakpointValue, useColorMode, VStack } from '@chakra-ui/react'
 import React from 'react'
 import GitHubCalendar from 'react-github-calendar'
 const GithubStats = () => {
+    const { colorMode, toggleColorMode } = useColorMode()
     const direction = useBreakpointValue({
         base: "column",
         md: "row"
     })
+    
     return (
         <Box >
-            <Heading mb="70px">GitHub Calendar</Heading>
+            <Heading color="headingColor" textAlign="center" mb="70px">GitHub Calendar</Heading>
             <VStack spacing="30px" justifyContent="center">
                 <Box hidden={direction === "column"} flex="1">
                     <img width="100%" src="https://github-readme-stats.vercel.app/api/top-langs/?username=atuls2060&layout=compact" />
@@ -24,7 +26,7 @@ const GithubStats = () => {
                         <img width="100%" src="https://github-readme-stats.vercel.app/api?username=atuls2060&show_icons=true" />
                     </Box>
                 </Flex>
-                <GitHubCalendar username="atuls2060" />
+                <GitHubCalendar style={{color:colorMode === "light" ? "white" : "black"}}  username="atuls2060" />
             </VStack>
         </Box>
     )

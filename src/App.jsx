@@ -1,4 +1,3 @@
-import './App.css';
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
 import About from './Pages/About';
@@ -11,7 +10,7 @@ import { Box, Container, VStack } from '@chakra-ui/react';
 
 function App() {
   return (
-    <div className="App">
+    <Box bg="bgColor">
       <Navbar />
       <Container minW={{base:'90%',md:'80%',xl:'60%'}}>
         {/* 160 */}
@@ -25,7 +24,7 @@ function App() {
         </VStack>
       </Container>
       <Footer />
-    </div>
+    </Box>
   );
 }
 

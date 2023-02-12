@@ -1,10 +1,9 @@
 import React from 'react'
-import { Card, CardBody, Button, Heading, Stack, Text, Image, Divider, HStack, Spacer, Flex } from '@chakra-ui/react'
-import { Link } from 'react-router-dom'
+import { Card, CardBody, Button, Heading, Stack, Text, Image, Divider, Flex, Tag, Grid } from '@chakra-ui/react'
 
 const ProjectCard = ({ image, title, desc, tech, live, github, }) => {
     return (
-        <Card borderTop="1px solid #e0e0e0" _hover={{ boxShadow: "xl" }}>
+        <Card bg="bgColor" color="textColor" border="1px solid" borderColor="mainColor" _hover={{ boxShadow: "xl" }}>
             <CardBody>
                 <Image
                     src={image}
@@ -14,26 +13,34 @@ const ProjectCard = ({ image, title, desc, tech, live, github, }) => {
                 />
                 <Stack mt='6' spacing='3'>
                     <Heading size='md'>{title}</Heading>
-                    <Text>
+                    <Text textColor="textColorSecondary">
                         {
                             desc
                         }
                     </Text>
 
-                    <Divider />
-
+                    <Divider borderColor="mainColor" />
+                    <Grid gridTemplateRows="80px auto">
+                    <Flex alignItems="self-start" justifyContent="center" flexWrap="wrap" gap="12px">
+                        {
+                            tech.map((item, index) => {
+                                return <Tag bg="mainColor" color="textColorThird" key={index}>{item}</Tag>
+                            })
+                        }
+                    </Flex>
                     <Flex justifyContent="space-between">
-                        <a href={github}  target="_blank">
-                            <Button variant='outline' colorScheme='brand'>
+                        <a href={github} target="_blank">
+                            <Button color="textColor" variant='outline' borderColor="mainColor" _hover={{backgroundColor:"mainColor"}}>
                                 Github
                             </Button>
                         </a>
-                        <a href={live}  target="_blank">
-                        <Button variant='outline' colorScheme='brand'>
-                            Live
-                        </Button>
+                        <a href={live} target="_blank">
+                            <Button color="textColor" variant='outline' borderColor="mainColor" _hover={{backgroundColor:"mainColor"}}>
+                                Live
+                            </Button>
                         </a>
                     </Flex>
+                    </Grid>
                 </Stack>
             </CardBody>
         </Card>

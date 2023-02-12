@@ -1,5 +1,6 @@
-import { Box, Container, Grid, Heading, HStack, useBreakpointValue } from '@chakra-ui/react'
 import React from 'react'
+import Styles from "../Components/SkillCard.module.css"
+import { Box, Flex, Grid, Heading, useBreakpointValue } from '@chakra-ui/react'
 import SkillCard from '../Components/SkillCard'
 
 const Skills = () => {
@@ -63,14 +64,35 @@ const Skills = () => {
 
     return (
         <Box id='skills' paddingTop={"100px"}>
-            <Heading mb="70px">Skills</Heading>
-            <Grid justifyContent={"center"} alignItems={"center"} gridTemplateColumns={`repeat(${colCount},1fr)`} gap={5}>
+            <Heading color="headingColor" textAlign="center" mb="70px">Skills</Heading>
+            <Flex mt="120px" justifyContent={"center"} columnGap="20px" rowGap="60px" flexWrap="wrap">
                 {
                     skills.map((item, index) => {
-                        return <SkillCard key={index} {...item} />
+                        return index < 3 ? <SkillCard key={index} {...item} /> : ""
                     })
                 }
-            </Grid>
+            </Flex>
+            <Flex mt="60px" justifyContent={"center"} columnGap="20px" rowGap="60px" flexWrap="wrap">
+                {
+                    skills.map((item, index) => {
+                        return index >= 3 & index < 5 ? <SkillCard key={index} {...item} /> : ""
+                    })
+                }
+            </Flex>
+            <Flex mt={["100px","60px"]} justifyContent={"center"} columnGap="20px" rowGap="60px" flexWrap="wrap">
+                {
+                    skills.map((item, index) => {
+                        return index >= 5 & index < 8 ? <SkillCard key={index} {...item} /> : ""
+                    })
+                }
+            </Flex>
+            <Flex mt="60px" justifyContent={"center"} columnGap="20px" rowGap="60px" flexWrap="wrap">
+                {
+                    skills.map((item, index) => {
+                        return index >= 8 & index <= 9 ? <SkillCard key={index} {...item} /> : ""
+                    })
+                }
+            </Flex>
         </Box>
     )
 }

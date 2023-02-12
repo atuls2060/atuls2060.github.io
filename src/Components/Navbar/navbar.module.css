@@ -12,8 +12,10 @@
 
 .navbar_links {
     border-bottom: 2px solid transparent;
+    border-width: "20px";
 }
 
 .navbar_links:hover {
-    border-bottom: 2px solid #3C6255;
+    border-bottom: 2px solid #86c232;
+    border-width: "20px";
 }
