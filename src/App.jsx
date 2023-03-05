@@ -7,6 +7,7 @@ import Projects from './Pages/Projects';
 import Skills from './Pages/Skills';
 import GithubStats from './Pages/GithubStats';
 import { Box, Container, VStack } from '@chakra-ui/react';
+import Tools from './Pages/Tools';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Home />
           <About />
           <Skills />
+          <Tools />
           <Projects />
           <GithubStats />
           <Contact />

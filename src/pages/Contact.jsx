@@ -51,7 +51,7 @@ const Contact = () => {
     <Box minHeight="90vh" id='contact' paddingTop="100px" paddingBottom={["90px", "0px"]}>
       <Heading color="headingColor" textAlign="center" mb="70px">Contact Me</Heading>
       <Flex width="100%" flexDirection={direction} gap='40px' justifyContent="space-evenly" alignItems="center">
-        <Stack direction={direction === 'row' ? 'column' : 'row'} gap={[2, 2]} align="flex-start">
+        <Stack textAlign="center" direction={direction === 'row' ? 'column' : 'row'} gap={[2, 2]} align="flex-start">
 
           <a href='https://www.linkedin.com/in/atul-singh-453464218' target="_blank">
             <Stack direction={direction} align="center" spacing={direction === 'row' ? '40px' : '15px'}>

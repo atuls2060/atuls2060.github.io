@@ -52,7 +52,7 @@ const Navbar = () => {
   }, [shadow])
 
   return (
-    <Card zIndex="2" bg="bgColor" p={2}  position="fixed" w="100%" boxShadow={shadow}>
+    <Card zIndex="2" bg="bgColor" p={2} position="fixed" w="100%" boxShadow={shadow}>
       <Container maxW={{ base: '90%', md: '90%', xl: '80%' }}>
         <HStack>
           <NavLink ><Text color="mainColor" fontSize={["30px", "40px"]} className={Styles.logo}>Atul Singh</Text></NavLink>
@@ -68,7 +68,7 @@ const Navbar = () => {
               }
             </Show>
 
-            <NavLink> <IconButton bg="mainColorSecondary" _hover={{backgroundColor:"mainColor"}} color="white" onClick={toggleColorMode} icon={colorMode === "dark" ? <BiSun /> : <BiMoon />} /></NavLink>
+            <NavLink> <IconButton bg="mainColorSecondary" _hover={{ backgroundColor: "mainColor" }} color="white" onClick={toggleColorMode} icon={colorMode === "dark" ? <BiSun /> : <BiMoon />} /></NavLink>
             <Show below='md'>
               <MobileNav />
             </Show>
@@ -76,7 +76,7 @@ const Navbar = () => {
         </HStack>
       </Container>
       <HashLink smooth to="#home">
-        <IconButton  hidden={showGotoTop} zIndex={12} position="fixed" bottom="2rem" right="2rem" bg="mainColorSecondary" color="white" _hover={{backgroundColor:"mainColor"}} icon={<RxArrowUp color='white' />} />
+        <IconButton hidden={showGotoTop} zIndex={12} position="fixed" bottom="2rem" right="2rem" bg="mainColorSecondary" color="white" _hover={{ backgroundColor: "mainColor" }} icon={<RxArrowUp color='white' />} />
       </HashLink>
     </Card>
   )
@@ -91,7 +91,11 @@ export const MobileNav = () => {
   const [placement, setPlacement] = React.useState('right')
 
   const handleClick = () => {
+    onClose();
     window.open("https://drive.google.com/file/d/10FdVUHI3nLJzKavREff1dayztKlLoWWK/view")
+  }
+  const linkClick = () => {
+    onClose();
   }
 
   let Links = [
@@ -123,17 +127,17 @@ export const MobileNav = () => {
   return (
     <>
       <RxHamburgerMenu cursor="pointer" onClick={onOpen} />
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+      <Drawer closeOnOverlayClick color="textColor" placement={placement} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />
         <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader borderBottomWidth='1px'>Atul Singh</DrawerHeader>
-          <DrawerBody>
+          <DrawerCloseButton textColor="textColor" />
+          <DrawerHeader bg="bgColor" borderBottomWidth='1px' textAlign="center" textColor="textColor">Atul Singh</DrawerHeader>
+          <DrawerBody bg="bgColor" textColor="textColor">
             <VStack>
               {
                 Links.map((item, index) => {
                   return item.label === "Resume" ?
-                    <a onClick={handleClick} href='https://drive.google.com/uc?export=download&id=10FdVUHI3nLJzKavREff1dayztKlLoWWK'>Resume</a> : <NavHashLink style={({ isactive }) => isactive ? { color: "mainColor" } : { color: "black" }} className={Styles.navbar_links} key={index} to={item.path}>{item.label}</NavHashLink>
+                    <a onClick={handleClick} href='https://drive.google.com/uc?export=download&id=10FdVUHI3nLJzKavREff1dayztKlLoWWK'>Resume</a> : <NavHashLink onClick={linkClick} style={({ isactive }) => isactive ? { color: "mainColor" } : { color: "textColor" }} className={Styles.navbar_links} key={index} to={item.path}>{item.label}</NavHashLink>
                 })
               }
             </VStack>
