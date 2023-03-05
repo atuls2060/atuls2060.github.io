@@ -15,7 +15,7 @@ const Projects = () => {
             github: "https://github.com/atuls2060/ApnaMart",
             title: "Apna Mart",
             tech: ["JavaScript", "Next js","Redux","Chakra ui","Json-server", "Json-Server-Auth", "JWT"],
-            desc: "Apna mart is a clone of Amazon website, here your can create account search products and place orders"
+            desc: "ApnaMart is a clone of the Amazon website; here you can create an account, search for products, and place orders."
         },
         {
             image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fmyglamn.jpg?alt=media&token=89ad7471-c310-4532-8a9f-9b89da3664fb",
@@ -31,7 +31,7 @@ const Projects = () => {
             github: "https://github.com/atuls2060/tart-pigs-946",
             title: "Hotjar Analytics Tools",
             tech: ["Html", "Css", "JavaScript"],
-            desc: "Hotjar is a product experience insights tool that gives you behavior analytics and feedback data"
+            desc: "Hotjar is a product experience insights tool that gives you behaviour analytics and feedback data."
         },
         {
             image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fweather-map.jpg?alt=media&token=f74d9409-fc58-4858-a7f8-2add0940bc3e",
@@ -39,7 +39,7 @@ const Projects = () => {
             github: "https://github.com/atuls2060/weather-map",
             title: "Weather Map",
             tech: ["Html", "Css", "JavaScript", "Axios"],
-            desc: "Get weather details of world, Search by city name and get temperature, wind speed,clouds, humidity"
+            desc: "Get weather details for the world, Search by city name and get temperature, wind speed, clouds, and humidity."
         }
 
     ]

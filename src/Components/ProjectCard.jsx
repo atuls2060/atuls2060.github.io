@@ -11,9 +11,9 @@ const ProjectCard = ({ image, title, desc, tech, live, github, }) => {
                     borderRadius='lg'
                     height="270px"
                 />
-                <Stack mt='6' spacing='3'>
+                <Stack  mt='6' spacing='3'>
                     <Heading size='md'>{title}</Heading>
-                    <Text textColor="textColorSecondary">
+                    <Text height="70px" textColor="textColorSecondary">
                         {
                             desc
                         }
