@@ -49,8 +49,8 @@ const Projects = () => {
             <Heading color="headingColor" mb="70px" textAlign='center'>Projects</Heading>
             <Grid gap={5} gridTemplateColumns={`repeat(${breakpointValue},1fr)`}>
                 {
-                    projectData.map((item) => {
-                        return <ProjectCard {...item} />
+                    projectData.map((item,index) => {
+                        return <ProjectCard key={index} {...item} />
                     })
                 }
             </Grid>

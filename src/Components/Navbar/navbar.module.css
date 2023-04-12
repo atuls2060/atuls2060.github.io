@@ -13,9 +13,24 @@
 .navbar_links {
     border-bottom: 2px solid transparent;
     border-width: "20px";
+    position: relative;
 }
 
-.navbar_links:hover {
-    border-bottom: 2px solid #86c232;
-    border-width: "20px";
+.navbar_links::before {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #1b66c9;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar_links:hover::before {
+    width: 100%;
+}
+
+.active_link {
+    color: #1b66c9 !important;
 }

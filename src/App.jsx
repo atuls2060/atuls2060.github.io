@@ -13,9 +13,9 @@ function App() {
   return (
     <Box bg="bgColor">
       <Navbar />
-      <Container minW={{base:'90%',md:'80%',xl:'60%'}}>
+      <Container minW={{ base: '90%', md: '80%', xl: '60%' }}>
         {/* 160 */}
-        <VStack  align="stretch" spacing="100px">
+        <VStack align="stretch" spacing="100px">
           <Home />
           <About />
           <Skills />

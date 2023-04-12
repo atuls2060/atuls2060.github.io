@@ -1,9 +1,11 @@
-import React from 'react'
 import { extendTheme } from "@chakra-ui/react"
 import { mode } from '@chakra-ui/theme-tools'
 
 
 const Theme = extendTheme({
+    config: {
+        initialColorMode: "dark",
+    },
     styles: {
         global: (props) => ({
             body: {
@@ -11,20 +13,20 @@ const Theme = extendTheme({
             },
             ':root': {
                 '--chakra-colors-mainColor': mode(
-                    '#86c232',
-                    '#86c232',
+                    '#1b66c9',
+                    '#1b66c9',
                 )(props),
                 '--chakra-colors-mainColorSecondary': mode(
-                    '#61892f',
-                    '#61892f',
+                    '#1a73e8',
+                    '#1a73e8',
                 )(props),
                 '--chakra-colors-bgColor': mode(
                     '#222629',
-                    '#F4F4F4',
+                    '#fbfdfe',
                 )(props),
                 '--chakra-colors-headingColor': mode(
-                    '#86c232',
-                    '#86c232',
+                    '#1a73e8',
+                    '#1a73e8',
                 )(props),
                 '--chakra-colors-textColor': mode(
                     'white',
@@ -35,22 +37,22 @@ const Theme = extendTheme({
                     '#8b939b',
                 )(props),
             },
-            "::-webkit-scrollbar":{
-                background:mode(
+            "::-webkit-scrollbar": {
+                background: mode(
                     '#222629',
                     '#F4F4F4',
                 )(props),
             }
         }),
     },
-    colors:{
-        mainColor:"#86c232",
-        mainColorSecondary:"#61892f",
-        bgColor:"#222629",
-        headingColor:"#86c232",
-        textColor:"white",
-        textColorSecondary:"#8b939b",
-        textColorThird:"#474B4F",
+    colors: {
+        mainColor: "#1b66c9",
+        mainColorSecondary: "#61892f",
+        bgColor: "#222629",
+        headingColor: "#86c232",
+        textColor: "white",
+        textColorSecondary: "#8b939b",
+        textColorThird: "white",
     },
 })
 

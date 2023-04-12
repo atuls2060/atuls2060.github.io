@@ -1,10 +1,9 @@
 import React from 'react'
-import { Card, CardBody, Button, Heading, Stack, Text, Image, Divider, Flex, Tag, Grid } from '@chakra-ui/react'
+import { Card, CardBody, Button, Heading, Stack, Text, Image, Divider, Flex, Tag, Grid, Box } from '@chakra-ui/react'
 
 const ProjectCard = ({ image, title, desc, tech, live, github, }) => {
     return (
-        <Card bg="bgColor" color="textColor" border="1px solid" borderColor="mainColor" _hover={{ boxShadow: "xl" }}>
-            <CardBody>
+        <Box p="20px" boxShadow="0 2px 4px rgba(0, 0, 0, 0.15)" bg="bgColor" color="textColor" _hover={{ boxShadow: "xl" }}>
                 <Image
                     src={image}
                     alt=''
@@ -42,8 +41,7 @@ const ProjectCard = ({ image, title, desc, tech, live, github, }) => {
                     </Flex>
                     </Grid>
                 </Stack>
-            </CardBody>
-        </Card>
+        </Box>
     )
 }
 

@@ -2,8 +2,8 @@
     width: 150px;
     height: 86px;
     position: relative;
-    border-right: 1px solid #86c232;
-    border-left: 1px solid #86c232;
+    border-right: 1px solid #1b66c9;
+    border-left: 1px solid #1b66c9;
     z-index: 1;
 }
 
@@ -15,8 +15,8 @@
     height: 100%;
     position: absolute;
     z-index: -1;
-    border-right: 1px solid #86c232;
-    border-left: 1px solid #86c232;
+    border-right: 1px solid #1b66c9;
+    border-left: 1px solid #1b66c9;
 }
 
 .hexagon:before {
