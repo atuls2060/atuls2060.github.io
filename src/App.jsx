@@ -1,13 +1,13 @@
 import Footer from './Components/Footer';
 import Navbar from './Components/Navbar/Navbar';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
-import Home from './Pages/Home';
-import Projects from './Pages/Projects';
-import Skills from './Pages/Skills';
-import GithubStats from './Pages/GithubStats';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Skills from './pages/Skills';
+import GithubStats from './pages/GithubStats';
 import { Box, Container, VStack } from '@chakra-ui/react';
-import Tools from './Pages/Tools';
+import Tools from './pages/Tools';
 
 function App() {
   return (
