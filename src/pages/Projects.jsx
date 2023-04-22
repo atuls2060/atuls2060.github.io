@@ -14,8 +14,16 @@ const Projects = () => {
             live: "https://apna-mart.vercel.app/",
             github: "https://github.com/atuls2060/ApnaMart",
             title: "Apna Mart",
-            tech: ["JavaScript", "Next js","Redux","Chakra ui","Json-server", "Json-Server-Auth", "JWT"],
+            tech: ["JavaScript", "Next js", "Redux", "Chakra ui", "Json-server", "Json-Server-Auth", "JWT"],
             desc: "ApnaMart is a clone of the Amazon website; here you can create an account, search for products, and place orders."
+        },
+        {
+            image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fcrypto_tracker.jpg?alt=media&token=530bbe8d-75dc-4c94-b6fd-1d0308ba0097",
+            live: "https://crypto-tracker-atul.vercel.app/",
+            github: "https://github.com/atuls2060/crypto_tracker",
+            title: "Crypto Tracker",
+            tech: ["Node js", "Express js", "Mongo DB", "JWT", "Bcrypt", "React js", "Chakra Ui", "JavaScript"],
+            desc: "Crypto Tracker App is a web application for tracking cryptocurrencies and add into your watchlist"
         },
         {
             image: "https://firebasestorage.googleapis.com/v0/b/look-your-best.appspot.com/o/project-images%2Fmyglamn.jpg?alt=media&token=89ad7471-c310-4532-8a9f-9b89da3664fb",
@@ -47,9 +55,9 @@ const Projects = () => {
     return (
         <Box id='projects' paddingTop={"100px"}>
             <Heading color="headingColor" mb="70px" textAlign='center'>Projects</Heading>
-            <Grid gap={5} gridTemplateColumns={`repeat(${breakpointValue},1fr)`}>
+            <Grid   gap={5} gridTemplateColumns={`repeat(${breakpointValue},1fr)`}>
                 {
-                    projectData.map((item,index) => {
+                    projectData.map((item, index) => {
                         return <ProjectCard key={index} {...item} />
                     })
                 }
